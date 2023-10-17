@@ -1,5 +1,5 @@
 import os
-from dotenv import read_dotenv
+from dotenv import load_dotenv
 from pathlib import Path
 
 
@@ -9,7 +9,7 @@ from django.conf import settings
 
 
 
-read_dotenv()
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'decoupled_dj.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres', 
+        'NAME': 'postgres',
         'USER': 'postgres',
         'PASSWORD': 'phevab',
-        'HOST': '127.0.0.1', 
+        'HOST': 'localhost',
         'PORT': '5432',
     }
 }
@@ -128,4 +128,4 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODL = 'user.User'
+AUTH_USER_MODEL = 'user.User'
